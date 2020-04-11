@@ -35,7 +35,7 @@ class iTunesRequestManager {
         let sessionConfig = URLSessionConfiguration.default
         sessionConfig.timeoutIntervalForRequest = Constants.requestTimeOut
         
-        let task = URLSession(configuration: sessionConfig).shared.dataTask(with: urlRequest) { data, response, error in
+        let task = URLSession(configuration: sessionConfig).dataTask(with: urlRequest) { data, response, error in
             guard let data = data,
                 let response = response as? HTTPURLResponse,
                 (200 ..< 300) ~= response.statusCode,
